@@ -16,13 +16,16 @@ This is an implementation of [Handsfree.js](https://handsfree.js.org) to emulate
 3) Enter VR
 
 ### Notes
-- Press <kbd>Stop Handsfree</kbd> or reload the page to stop the webcam
-- If you reload page, it may still show <kbd>Stop Handsfree</kbd> but this will be fixed
 - Everything happens in your browser
+- Press <kbd>Stop Handsfree</kbd> or reload the page to stop the webcam
+- If you reload page the camera will be stopped, but because the DevTools is in a different context it may still show <kbd>Stop Handsfree</kbd>. You can click it again to refresh it (this will be fixed)
+- Head tracking currently works best when you're centered with the camera, this will definitely be fixed to allow for more range of motion
 
 ---
 
 # Dev notes
+
+- If you make changes, you'll need to update the extension again. You'll also need to close devtools and open it again...it's not enough to just refresh the page :(
 
 ## Adding Handtracking
 
