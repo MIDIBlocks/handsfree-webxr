@@ -23,3 +23,17 @@ port.onMessage.addListener(message => {
     break
   }
 })
+
+/**
+ * Initialize Handsfree.js
+ */
+document.querySelector('#startHandsfree').addEventListener('click', function () {
+  document.querySelector('#startHandsfree').style.display = 'none'
+  document.querySelector('#stopHandsfree').style.display = 'inline-block'
+  chrome.runtime.sendMessage({action: 'handsfree-inject'}, function(response) {})
+})
+
+document.querySelector('#stopHandsfree').addEventListener('click', function () {
+  chrome.runtime.sendMessage({action: 'handsfree-reload'}, function(response) {})
+  window.location.reload()
+})

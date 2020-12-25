@@ -2,6 +2,7 @@
   <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="/assets/handsfree/assets/handsfree.css" rel="stylesheet">
     <style>
       body {
         margin: 0;
@@ -154,6 +155,10 @@
       <div class="title-bar border-top">
         <button id="resetPoseButton">Reset pose</button>
         <button id="exitButton">Exit immersive</button>
+
+        <!-- Handsfree -->
+        <button id="startHandsfree" class="handsfree-show-when-stopped handsfree-hide-when-loading">Start Handsfree</button>
+        <button id="stopHandsfree" class="handsfree-show-when-started" style="background: #f66; color: #fff">Stop Handsfree</button>
       </div>
     </div>
     <div id="devicePropertiesComponent" class="component device-properties-component">

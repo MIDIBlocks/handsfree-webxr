@@ -10,5 +10,9 @@ chrome.runtime.onMessage.addListener(function (message) {
       chrome.tabs.executeScript({file: '/assets/gsap.min.js'})
       chrome.tabs.executeScript({file: '/src/handsfree/content.js'})
     break
+
+    case 'handsfree-reload':
+      chrome.tabs.executeScript({code: 'window.location.reload()'})
+    break
   }
 })
