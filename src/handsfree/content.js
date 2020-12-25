@@ -9,7 +9,8 @@ if (typeof port === 'undefined') {
  */
 handsfree = new Handsfree({
   assetsPath: chrome.runtime.getURL('/assets/handsfree/assets'),
-  weboji: true
+  weboji: true,
+  hands: true
 })
 handsfree.start()
 

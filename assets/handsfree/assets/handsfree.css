@@ -1,3 +1,19 @@
+html body .handsfree-feedback {
+  display: block !important;
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  z-index: 9999999;
+  bottom: -90px;
+}
+html body .handsfree-feedback .handsfree-canvas-hands {
+  display: block;
+  position: fixed;
+  top: 50%;
+  z-index: 99999999;
+  transform: translateY(-50%);
+}
+
 /* Debug and Feedback */
 .handsfree-feedback,
 .handsfree-video,
