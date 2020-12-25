@@ -17,6 +17,7 @@ port.onMessage.addListener(message => {
       assetNodes[DEVICE.HEADSET].position.y = message.data.weboji.translation[1] * 2
       assetNodes[DEVICE.HEADSET].position.z = message.data.weboji.translation[2] * -3
 
+      // Update everything. The Polyfill will handle the rest
       updateHeadsetPropertyComponent()
       notifyPoseChange(assetNodes[DEVICE.HEADSET])
       render()

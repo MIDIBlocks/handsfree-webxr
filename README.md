@@ -1,13 +1,83 @@
-# Coming soon
+# Handsfree WebXR - Coming Soon
 
-This is an experiment to see if we can substitute WebXR with computer vision!
+> 🚨 This project is still an experiment 🚨
+>
+> Please see [the original Mozilla WebXR Emulator Extension](https://github.com/MozillaReality/WebXR-emulator-extension) or see the instructions in the section titled "[ORIGINAL DOCUMENTATION](#original-documentation)" below for instructions on how to use the extension. 
 
-Below is the original repo readme: [https://github.com/MozillaReality/WebXR-emulator-extension](https://github.com/MozillaReality/WebXR-emulator-extension)
+This is an implementation of [Handsfree.js](https://handsfree.js.org) to emulate WebXR devices handsfree!
 
+## How Handsfree Mode works
 
-----
+![](https://i.imgur.com/IKWZFYY.jpg)
 
-# WebXR emulator extension
+0) Visit any WebXR page. For testing, I like [Pointer Painter](https://immersive-web.github.io/webxr-samples/tests/pointer-painter.html)
+1) After installing the extension (see below), open up the WebXR tab in devtools
+2) Click Start Handsfree at the bottom and wait a few seconds, you'll start to see the headset move when it's ready
+3) Enter VR
+
+### Notes
+- Press <kbd>Stop Handsfree</kbd> or reload the page to stop the webcam
+- If you reload page, it may still show <kbd>Stop Handsfree</kbd> but this will be fixed
+- Everything happens in your browser
+
+---
+
+# Dev notes
+
+## Adding Handtracking
+
+I haven't explored it yet, but the following files are where everything for head tracking is happening:
+
+### Inject your computer vision model here: `/src/handsfree/background.js`
+This script gets injected into the web page and is where you should load your models. You can use [Handsfree.js](https://handsfree.js.org/ref/model/hands) (which currently only supports the 2D hands) or you might want to use [TensorFlow 3D Handpose](https://github.com/tensorflow/tfjs-models/tree/master/handpose).
+
+### Run your computer vision model here: `/src/handsfree/content.js`
+
+To send data to the DevTools (the `/src/handsfree/pane.js` script) from the webpage that has the model, you'll need to post a message:
+
+```js
+port.postMessage({
+  action: 'handsfree-data',
+  data: {weboji}
+})
+```
+
+Basically add or replace the code in their with Handpose data.
+
+### Update the actual 3D controller models here: `/src/handsfree/panel.js`
+
+Listeners are already set on the models thanks to the Mozilla Extension, so all you need to do is simply set the position/rotation. See how I'm doing it for headtracking:
+
+```js
+// Update assetNodes
+// The other ones to check are: DEVICE.CONTROLLER, DEVICE.RIGHT_CONTROLLER, DEVICE.LEFT_CONTROLLER
+assetNodes[DEVICE.HEADSET].rotation.x = message.data.weboji.rotation[0]
+assetNodes[DEVICE.HEADSET].rotation.y = message.data.weboji.rotation[1]
+assetNodes[DEVICE.HEADSET].rotation.z = message.data.weboji.rotation[2]
+
+// Update everything. The Polyfill will handle the rest
+updateHeadsetPropertyComponent()
+notifyPoseChange(assetNodes[DEVICE.HEADSET])
+render()
+```
+
+These are just quick draft notes. I'll have a full tutorial soon!
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+# ORIGINAL DOCUMENTATION
 
 WebXR emulator extension is a browser extension which helps your WebXR content creation. It enables you to responsively run [WebXR](https://www.w3.org/TR/webxr/) applications on your **desktop** browser without the need of any XR devices. 
 
