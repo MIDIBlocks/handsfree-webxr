@@ -1,4 +1,6 @@
 const port = chrome.runtime.connect({name: 'contentScript'});
+window.port = port
+console.log('port', port)
 
 const dispatchCustomEvent = (type, detail) => {
   window.dispatchEvent(new CustomEvent(type, {

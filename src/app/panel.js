@@ -1,8 +1,11 @@
-const port = chrome.runtime.connect(null, {name: 'panel'});
+if (typeof port === 'undefined') {
+  port = chrome.runtime.connect(null, {name: 'panel'})
+}
 const tabId = chrome.devtools.inspectedWindow.tabId;
 
-// receive message from contentScript via background
-
+/**
+ * Receive message from contentScript via background
+ */
 port.onMessage.addListener(message => {
   switch (message.action) {
     case 'webxr-startup':
@@ -176,6 +179,7 @@ const assetNodes = {};
 assetNodes[DEVICE.HEADSET] = null;
 assetNodes[DEVICE.RIGHT_CONTROLLER] = null;
 assetNodes[DEVICE.LEFT_CONTROLLER] = null;
+window.assetNodes = assetNodes
 
 // @TODO: Currently the values are　groundless.
 //        Set more appropriate values.

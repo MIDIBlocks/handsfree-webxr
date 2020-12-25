@@ -1,6 +1,10 @@
 /**
  * Setup Handsfree.js
  */
+if (typeof port === 'undefined') {
+  port = chrome.runtime.connect(null, {name: 'panel'})
+}
+
 handsfree = new Handsfree({
   assetsPath: chrome.runtime.getURL('/assets/handsfree/assets'),
   weboji: true
@@ -12,8 +16,8 @@ handsfree.start()
  */
 handsfree.use('messager', {
   onFrame (data) {
-    chrome.runtime.sendMessage({
-      message: 'handsfree-data',
+    port.postMessage({
+      action: 'handsfree-data',
       data
     })
   }

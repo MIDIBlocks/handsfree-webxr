@@ -1,4 +1,5 @@
 const connections = {};
+let portMap = {}
 
 chrome.runtime.onConnect.addListener(port => {
   // @TODO: release connection when disconnected
@@ -10,7 +11,7 @@ chrome.runtime.onConnect.addListener(port => {
       connections[tabId] = {};
     }
 
-    const portMap = connections[tabId];
+    portMap = connections[tabId];
 
     portMap[port.name] = port;
 
