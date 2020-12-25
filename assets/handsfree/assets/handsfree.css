@@ -6,13 +6,14 @@ html body .handsfree-feedback {
   z-index: 9999999;
   bottom: -90px;
 }
-html body .handsfree-feedback .handsfree-canvas-hands {
+/* Uncomment this to display hand skeleton/landmarks over the entire screen when it's working */
+/* html body .handsfree-feedback .handsfree-canvas-hands {
   display: block;
   position: fixed;
   top: 50%;
   z-index: 99999999;
   transform: translateY(-50%);
-}
+} */
 
 /* Debug and Feedback */
 .handsfree-feedback,
