@@ -30,7 +30,10 @@
     "js": [
       "polyfill/webxr-polyfill.js",
       "src/ConfigurationManager.js",
-      "src/extension/content-script.js"
+      "src/extension/content-script.js",
+
+      "assets/handsfree/handsfree.js",
+      "src/extension/handsfree.js"
     ],
     "run_at": "document_start",
     "all_frames": true
@@ -47,6 +50,8 @@
   "manifest_version": 2,
   "web_accessible_resources": [
     "src/devices.json",
-    "assets/hall_empty.glb"
+    "assets/hall_empty.glb",
+    "assets/handsfree/assets/jeeliz/jeelizFaceTransfer.js",
+    "assets/handsfree/assets/jeeliz/jeelizFaceTransferNNC.json"
   ]
 }

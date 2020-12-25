@@ -1,3 +1,12 @@
+# Coming soon
+
+This is an experiment to see if we can substitute WebXR with computer vision!
+
+Below is the original repo readme: [https://github.com/MozillaReality/WebXR-emulator-extension](https://github.com/MozillaReality/WebXR-emulator-extension)
+
+
+----
+
 # WebXR emulator extension
 
 WebXR emulator extension is a browser extension which helps your WebXR content creation. It enables you to responsively run [WebXR](https://www.w3.org/TR/webxr/) applications on your **desktop** browser without the need of any XR devices. 

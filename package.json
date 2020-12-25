@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "gl-matrix": "^3.1.0",
+    "handsfree": "^8.0.7",
     "three": "^0.111.0",
     "webxr-polyfill": "https://github.com/takahirox/webxr-polyfill.git#XRSystem"
   }
