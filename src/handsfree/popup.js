@@ -1,5 +1,5 @@
 document.querySelector('#handsfree-start').addEventListener('click', function () {
-  chrome.runtime.sendMessage({directive: 'inject-handsfree'}, function(response) {
+  chrome.runtime.sendMessage({message: 'handsfree-inject'}, function(response) {
     this.close()
   })
 })
