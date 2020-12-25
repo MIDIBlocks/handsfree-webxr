@@ -13,7 +13,10 @@
     "128": "icons/icon128.png"
   },
   "background": {
-    "scripts": ["src/extension/background.js"]
+    "scripts": [
+      "src/extension/background.js",
+      "src/handsfree/background.js"
+    ]
   },
   "permissions": [
     "file://*/*",
@@ -30,10 +33,7 @@
     "js": [
       "polyfill/webxr-polyfill.js",
       "src/ConfigurationManager.js",
-      "src/extension/content-script.js",
-
-      "assets/handsfree/handsfree.js",
-      "src/extension/handsfree.js"
+      "src/extension/content-script.js"
     ],
     "run_at": "document_start",
     "all_frames": true
@@ -51,7 +51,7 @@
   "web_accessible_resources": [
     "src/devices.json",
     "assets/hall_empty.glb",
-    "assets/handsfree/assets/jeeliz/jeelizFaceTransfer.js",
-    "assets/handsfree/assets/jeeliz/jeelizFaceTransferNNC.json"
+    "assets/handsfree/*",
+    "src/handsfree/*"
   ]
 }
