@@ -13,6 +13,10 @@ port.onMessage.addListener(message => {
       assetNodes[DEVICE.HEADSET].rotation.y = message.data.weboji.rotation[1]
       assetNodes[DEVICE.HEADSET].rotation.z = message.data.weboji.rotation[2]
 
+      assetNodes[DEVICE.HEADSET].position.x = message.data.weboji.translation[0] * 2
+      assetNodes[DEVICE.HEADSET].position.y = message.data.weboji.translation[1] * 2
+      assetNodes[DEVICE.HEADSET].position.z = message.data.weboji.translation[2] * -3
+
       updateHeadsetPropertyComponent()
       notifyPoseChange(assetNodes[DEVICE.HEADSET])
       render()
