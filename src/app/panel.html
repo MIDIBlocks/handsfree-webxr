@@ -162,13 +162,25 @@
       </div>
     </div>
     <div id="devicePropertiesComponent" class="component device-properties-component">
+      <!-- Headset Panel -->
       <div id="headsetComponent" class="component device-property-component">
         <div class="title-bar"><span class="icon">&#9660;</span>Headset</div>
         <div class="component device-property-content">
           <div><span class="key">position:</span> <span class="value" id="headsetPosition"></span></div>
           <div><span class="key">rotation:</span> <span class="value" id="headsetRotation"></span></div>
+
+          <div>
+            <label>Handsfree rotation multiplier</label>
+            <input type="range" min="0" max="5" step=".25" value="1" id="handfree-head-rotation-multiplier">
+          </div>
+          <div>
+            <label>Handsfree translation multiplier</label>
+            <input type="range" min="0" max="5" step=".25" value="1" id="handfree-head-translation-multiplier">
+          </div>
         </div>
       </div>
+
+      <!-- Right controller panel -->
       <div id="rightControllerComponent" class="component device-property-component">
         <div class="title-bar"><span class="icon">&#9660;</span>Right controller</div>
         <div class="component device-property-content">
@@ -178,6 +190,8 @@
           <div><button class="trigger-button" id="rightSqueezeButton">squeeze button</button></div>
         </div>
       </div>
+
+      <!-- Left controller panel -->
       <div id="leftControllerComponent" class="component device-property-component">
         <div class="title-bar"><span class="icon">&#9660;</span>Left controller</div>
         <div class="component device-property-content">
