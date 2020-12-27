@@ -155,10 +155,6 @@
       <div class="title-bar border-top">
         <button id="resetPoseButton">Reset pose</button>
         <button id="exitButton">Exit immersive</button>
-
-        <!-- Handsfree -->
-        <button id="startHandsfree" class="handsfree-show-when-stopped handsfree-hide-when-loading">Start Handsfree</button>
-        <button id="stopHandsfree" class="handsfree-show-when-started" style="background: #f66; color: #fff">Stop Handsfree</button>
       </div>
     </div>
     <div id="devicePropertiesComponent" class="component device-properties-component">
@@ -169,13 +165,24 @@
           <div><span class="key">position:</span> <span class="value" id="headsetPosition"></span></div>
           <div><span class="key">rotation:</span> <span class="value" id="headsetRotation"></span></div>
 
+          <!-- Handsfree -->
           <div>
-            <label>Handsfree rotation multiplier</label>
-            <input type="range" min="0" max="5" step=".25" value="1" id="handfree-head-rotation-multiplier">
+            <button id="startHandsfree" class="handsfree-show-when-stopped handsfree-hide-when-loading">Start Handsfree</button>
+            <button id="stopHandsfree" class="handsfree-show-when-started" style="background: #f66; color: #fff">Stop Handsfree</button>
           </div>
           <div>
-            <label>Handsfree translation multiplier</label>
-            <input type="range" min="0" max="5" step=".25" value="1" id="handfree-head-translation-multiplier">
+            <button id="toggleHandsfreeWebcam" class="handsfree-show-when-started">Show/Hide webcam feed</button>
+          </div>
+
+          <div>
+            <div>
+              <label class="handsfree-show-when-started">Handsfree rotation multiplier</label>
+              <input class="handsfree-show-when-started" type="range" min="0" max="5" step=".25" value="1" id="handfree-head-rotation-multiplier">
+            </div>
+            <div>
+              <label class="handsfree-show-when-started">Handsfree translation multiplier</label>
+              <input class="handsfree-show-when-started" type="range" min="0" max="5" step=".25" value="1" id="handfree-head-translation-multiplier">
+            </div>
           </div>
         </div>
       </div>

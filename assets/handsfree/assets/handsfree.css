@@ -1,5 +1,4 @@
 html body .handsfree-feedback {
-  display: block !important;
   position: fixed;
   width: 350px;
   height: 350px;

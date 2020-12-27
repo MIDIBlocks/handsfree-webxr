@@ -3,7 +3,8 @@
  */
 const $handsfree = {
   $rotMult: document.querySelector('#handfree-head-rotation-multiplier'),
-  $transMult: document.querySelector('#handfree-head-translation-multiplier')
+  $transMult: document.querySelector('#handfree-head-translation-multiplier'),
+  isFeedVisible: false
 }
 
 /**
@@ -41,8 +42,24 @@ port.onMessage.addListener(message => {
  */
 document.querySelector('#startHandsfree').addEventListener('click', function () {
   document.querySelector('#startHandsfree').style.display = 'none'
-  document.querySelector('#stopHandsfree').style.display = 'inline-block'
+  document.querySelectorAll('.handsfree-show-when-started').forEach($el => {
+    $el.style.display = 'inline-block'
+  })
+  
   chrome.runtime.sendMessage({action: 'handsfree-inject'})
+})
+
+/**
+ * Toggle video feed
+ */
+document.querySelector('#toggleHandsfreeWebcam').addEventListener('click', function () {
+  $handsfree.isFeedVisible = !$handsfree.isFeedVisible
+  console.log('toggle', $handsfree.isFeedVisible)
+
+  chrome.runtime.sendMessage({
+    action: 'handsfree-toggle-feed',
+    state: $handsfree.isFeedVisible
+  })
 })
 
 /**
