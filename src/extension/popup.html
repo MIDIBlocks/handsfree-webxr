@@ -1,21 +1,17 @@
 <html>
 <head>
-  <style>
-    html {
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      width: 300px;
-      margin: 0;
-      padding: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
   <h1>WebXR device emulator browser extension</h1>
   <p>Open "WebXR" tab in the developer tool to control the emulated device.</p>
-
   <p>Read the docs: <a href="https://github.com/midiblocks/handsfree-webxr">https://github.com/midiblocks/handsfree-webxr</a></p>
+
+  <section>
+    <button id="start-webcam">Start Webcam</button>
+    <button id="stop-webcam" class="hidden">Stop Webcam</button>
+  </section>
+
+  <script src="popup.js"></script>
 </body>
 </html>

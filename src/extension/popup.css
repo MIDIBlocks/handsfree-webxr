@@ -1,0 +1,12 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 300px;
+  margin: 0;
+  padding: 20px;
+}
+.hidden {
+  display: none;
+}

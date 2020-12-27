@@ -72,7 +72,6 @@ handsfree.use('threeUpdater', {
  * Toggle Handsfree
  */
 document.querySelector('#handsfree-start').addEventListener('click', function () {
-  console.log('HANDSFREE')
   handsfree.start()
 })
 document.querySelector('#handsfree-stop').addEventListener('click', function () {
