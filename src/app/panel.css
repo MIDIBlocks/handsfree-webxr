@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  background-color: #fff;
+  color: #2a2a2a;
+  font-size: 12px;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+select {
+  margin: 0 0.6rem;
+}
+
+label {
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  margin: 0;
+  margin-right: 2px;
+}
+
+canvas {
+  display: block;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-component {
+  flex: 1;
+}
+
+.device-properties-component {
+  width: 260px;
+  border-left: 1px solid #ddd;
+}
+
+.device-property-component {
+  border-bottom: 1px solid #ddd;
+}
+
+.device-property-content {
+  padding: 10px;
+}
+
+.device-property-content > div {
+  margin: 4px 10px;
+}
+
+.title-bar {
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+  background-color: #f9f9fa;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #ddd;
+  align-items: center;
+  padding: 0 22px;
+}
+
+.device-properties-component .title-bar {
+  cursor: pointer;
+}
+
+.device-properties-component .title-bar:hover {
+  background-color: #f2f2f2;
+}
+
+button {
+  margin: 0 2px;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #363636;
+  cursor: pointer;
+  outline-style: none;
+}
+
+button:hover {
+  background-color: #e8e8e8;
+}
+
+button.pressed {
+  background-color: #0074e8;
+  border-color: #fff;
+  color: #fff;
+}
+
+.trigger-button {
+  height: 30px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.item-right {
+  margin-left: auto;
+}
+
+.border-top {
+  border-top: 1px solid #ddd;
+}
+
+.key, .value {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.key {
+  color: #0074e8;
+}
+
+.value {
+  color: #dd00a9;
+  cursor: pointer;
+}
+
+.value:hover {
+  background: #f0f0f0;
+}
+
+.icon {
+  position: absolute;
+  color: #929294;
+  margin-left: -15px;
+}
