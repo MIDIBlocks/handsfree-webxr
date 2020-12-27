@@ -54,7 +54,6 @@ document.querySelector('#startHandsfree').addEventListener('click', function () 
  */
 document.querySelector('#toggleHandsfreeWebcam').addEventListener('click', function () {
   $handsfree.isFeedVisible = !$handsfree.isFeedVisible
-  console.log('toggle', $handsfree.isFeedVisible)
 
   chrome.runtime.sendMessage({
     action: 'handsfree-toggle-feed',
