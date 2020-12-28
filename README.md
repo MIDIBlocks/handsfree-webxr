@@ -1,4 +1,4 @@
-# Handsfree WebXR - Coming Soon
+# 👉 This is was a prototype and has been archvied, please see [Handsfree Browser](https://github.com/midiblocks/handsfree-browser)
 
 > 🚨 This project is still an experiment 🚨
 >
